@@ -12,7 +12,7 @@ dotenv.load_dotenv()
 
 sec_key = os.environ.get('HUGGINGFACEHUB_API_KEY')
 repo_id = "mistralai/Mistral-7B-Instruct-v0.3"
-llm = HuggingFaceEndpoint(repo_id=repo_id, max_length=128, temperature=0.7, token=sec_key)
+llm = HuggingFaceEndpoint(repo_id=repo_id, max_new_tokens=128, temperature=0.7, huggingfacehub_api_token=sec_key)
 
 
 mysql_uri = f'mysql+mysqlconnector://{MYSQL_USER}:{MYSQL_PASS}@{MYSQL_HOST}:{MYSQL_PORT}/{MYSQL_DB}'
